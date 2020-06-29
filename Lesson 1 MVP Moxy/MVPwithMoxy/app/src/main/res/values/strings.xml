@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">MVPwithMoxy</string>
+    <string name="textViewAdded" />
+    <string name="buttonAdd">Add text</string>
 </resources>
