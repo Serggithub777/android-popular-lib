@@ -5,8 +5,10 @@ import android.util.Log;
 import com.example.mvpwithmoxy.model.Model;
 import com.example.mvpwithmoxy.view.MainView;
 
+import moxy.InjectViewState;
 import moxy.MvpPresenter;
 
+@InjectViewState
 public class Presenter extends MvpPresenter<MainView> {
     private static final String TAG = "SecondPresenter";
     private Model model;
@@ -16,11 +18,6 @@ public class Presenter extends MvpPresenter<MainView> {
         this.model = new Model();
     }
 
-    @Override
-    protected void onFirstViewAttach() {
-        super.onFirstViewAttach();
-        Log.d(TAG, "onFirstViewAttach: ");
-    }
     private String appendStr(String text, String str) {
         return text + str;
     }
