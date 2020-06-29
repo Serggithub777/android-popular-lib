@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -17,7 +18,7 @@ public class MainActivity extends AppCompatActivity implements MainView{
     private TextView textAdded;
     private Button buttonAddText;
     private MainPresenter mainPresenter;
-
+    private String str;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,13 +28,16 @@ public class MainActivity extends AppCompatActivity implements MainView{
         enteredText = findViewById(R.id.enteredText);
         textAdded = findViewById(R.id.textViewAdded);
         buttonAddText = findViewById(R.id.buttonAdd);
-
         mainPresenter = new MainPresenter(this);
+    }
 
+    public void buttonClick(View view) {
+        str = enteredText.getText().toString();
+        mainPresenter.onButtonClick(str);
     }
 
     @Override
     public void setAddedText(String text) {
-
+        textAdded.setText(text);
     }
 }
