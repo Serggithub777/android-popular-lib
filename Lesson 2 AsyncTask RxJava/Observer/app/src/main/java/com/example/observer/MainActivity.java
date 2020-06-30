@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 
 public class MainActivity extends AppCompatActivity {
+    Spammer spammer = new Spammer();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -14,12 +15,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void subscribe (View view) {
-
+           spammer.registerObserver();
     }
     public void unsubscribe (View view) {
-
+           spammer.unregisterObserver();
     }
     public void spam (View view) {
-
+           spammer.newSapam("This is spam", "number one");
     }
 }
